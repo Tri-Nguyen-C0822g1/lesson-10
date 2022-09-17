@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        #good {
+            display: inline-block;
+        }
+
+        #good1 {
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        #fast {
+            display: inline-block;
+        }
+
+        #fast1 {
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        #cheap {
+            display: inline-block;
+        }
+
+        #cheap1 {
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="good">
+    <label class="switch">
+        <input class="checkbox" id="good-check" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+</div>
+<div id="good1">
+    <h2>Good</h2>
+</div>
+<br><br>
+<div id="fast">
+    <label class="switch">
+        <input class="checkbox" id="fast-check" type="checkbox">
+        <span class="slider round"></span>
+    </label></div>
+<div id="fast1">
+    <h2>Fast</h2>
+</div>
+<br><br>
+<div id="cheap">
+    <label class="switch">
+        <input class="checkbox" id="cheap-check" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <div id="cheap1">
+        <h2>Cheap</h2></div>
+</div>
+</body>
+<script>
+    function onChangCheckBox(element, name) {
+        // if condition: FALSE: false, 0, "", null, empty array. Otherwise, TRUE.
+        if (element.checked) {
+            console.log(name + ' checked');
+        } else {
+            console.log(name + ' unchecked');
+        }
+    }
+
+    var goodCheck = document.getElementById("good-check");
+    goodCheck.onchange = () => onChangCheckBox(goodCheck, "Good");
+
+    var fastCheck = document.getElementById("fast-check");
+    fastCheck.onchange = () => onChangCheckBox(fastCheck, "Fast");
+
+    var cheapCheck = document.getElementById("cheap-check");
+    cheapCheck.onchange = () => onChangCheckBox(cheapCheck, "Cheap");
+</script>
+</html>
