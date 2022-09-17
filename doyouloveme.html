@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+    function dongy() {
+    alert("<3");
+    }
+    function tuchoi() {
+    var x = Math.random() * window.innerWidth;
+    var y = Math.random() * window.innerHeight;
+    document.getElementById("no").style.left = x + 'px';
+    document.getElementById("no").style.top = y + 'px';
+    }
+
+    </script>
+</head>
+<body>
+<h1>Do you love me?</h1>
+<input type="button" value="Yes"  onclick="dongy()" style="position:absolute; left:285px; top:235px;"/>
+<input type="button" value="No" id="no" onmouseover="tuchoi()" style="position:absolute; left:360px; top:235px;"/>
+
+<p id="output"></p>
+
+</body>
+</html>
