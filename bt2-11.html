@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let tax, salary;
+    do {
+        salary = Number(prompt("Nhập thu nhập chịu thuế theo tháng (triệu VND)"));
+    } while (!salary && salary <= 0);
+
+    if(salary <= 5){
+        tax = salary/100*5;
+    }else if (salary <= 10) {
+        tax = salary /100 * 10 - 0.25;
+    } else if (salary <= 18) {
+        tax = salary /100 * 15 - 0.75;
+    } else if (salary <= 32) {
+        tax = salary /100 * 20 - 1.65;
+    } else if (salary <= 52) {
+        tax = salary /100 * 25 - 3.25;
+    } else if (salary <= 80) {
+        tax = salary /100 * 30 - 5.85;
+    } else {
+        tax = salary /100 * 35 - 9.85;
+    }
+    alert("Số tền thuế phải đóng là" + tax + "triệu VND");
+
+
+</script>
+</body>
+</html>

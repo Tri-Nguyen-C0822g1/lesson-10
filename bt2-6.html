@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Giai phuong trinh : ax + b = 0</h3>
+Nhập a:
+<input type="number" id="a"/>
+Nhập b:
+<input type="number" id="b"/>
+<button onclick="findX()">Tim x
+</button>
+<br/>
+<p id="message" style="color: #d61b06"></p>
+Result: <span id="result"></span>
+<script>
+    let previousAValue = null;
+    let previousBValue = null;
+
+    function findX() {
+
+        // Get input a & b
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+
+        if (a === aValue && b === bValue) {
+            console.log("Same as previous value");
+            return;
+        }
+        console.log("Run findX");
+
+        // Reset message
+        document.getElementById("message").innerText = "";
+
+        // Assign value a & b as previous value
+        previousAValue = a;
+        previousBValue = b;
+
+        // declare message variable
+        let message = null;
+
+        // validate input
+        if (a === "") {
+            message = "Vui lòng nhập a";
+        }
+
+        if (b === "") {
+            // b is not inputted
+            if (message === null) {
+                // a is inputted
+                message = "Vui lòng nhập b";
+            } else {
+                // a is not inputted
+                message += " và b";
+            }
+        }
+
+        if (a === "0") {
+            if (message === null) {
+                message = "Vui lòng nhập a khác 0";
+            } else {
+                message += "\nVui lòng nhập a khác 0";
+            }
+        }
+
+        if (message === null) {
+            // Find x
+            a = parseInt(a);
+            b = parseInt(b);
+            let result = -b / a;
+            document.getElementById("result").innerText = "" + result;
+        } else {
+            // show message
+            document.getElementById("message").innerText = message;
+        }
+    }
+</script>
+</body>
+</html>

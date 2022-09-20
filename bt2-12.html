@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let money, interestRate, month;
+    do {
+        money = Number(prompt("Nhập số tiền gửi"));
+    } while (!money || money <= 0)
+
+    do {
+        interestRate = Number(prompt("Nhập lãi suất"));
+    } while (!interestRate || interestRate <= 0)
+
+    do {
+        month = Number(prompt("Nhập số tháng gửi"));
+    } while (!month || month <= 0)
+
+    let currentMoney = money;
+
+    for (let i = 1; i <= month ; i++ ) {
+        currentMoney = currentMoney + currentMoney / 100 * interestRate;
+    }
+    let profit = currentMoney - money;
+    alert(profit);
+</script>
+</body>
+</html>

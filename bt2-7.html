@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Giai phuong trinh : ax2 + bx + c = 0</h3>
+Nhập a:
+<input type="number" id="a"/>
+Nhập b:
+<input type="number" id="b"/>
+Nhập c:
+<input type="number" id="c"/>
+<button onclick="findX()">Tim x</button>
+<br><br>
+Result: <span id="result"></span>
+<script>
+    function findX() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        let c = document.getElementById("c").value;
+        let result = "";
+        if (a === 0) {
+            result = result += "Vui lòng nhập a khác 0";
+        } else {
+            let y = (b * b) - 4 * a * c;
+            if (y < 0) {
+                result = "Phương triình vô nghiệm";
+            } else if (y = 0) {
+                result = "Phương trình có nghiệm kép x1 = x2 =" + result;
+            } else {
+                result = "Phương trình có 2 nghiêm";
+            }
+        }
+
+
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
